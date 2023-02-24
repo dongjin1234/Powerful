@@ -1,0 +1,140 @@
+<%-include('../components/header.ejs') %>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="/client/js/home.js" defer></script>
+  <script src="/client/js/sub.js" defer></script>
+  </head>
+
+  <body>
+
+    <div class="loading-wrap">
+      <div class="spinner">
+      <div class="curve_top_left"></div>
+      <div class="curve_top_right"></div>
+      <div class="curve_bottom_left"></div>
+      <div class="curve_bottom_right"></div>
+      <div class="center_circle"></div>
+      </div>
+  </div>
+
+
+    <%-include('../components/side-menu.ejs') %>
+
+    <!-- 타이틀  -->
+    <div class="title-wrap">
+      <h1>PPT</h1>
+      <input class="search" type="search" name="" id="">
+      <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+    </div>
+
+    <!-- 프로모션 배너 -->
+    <section class="banner">
+      <ul class="banner-container">
+        <li class="banner-slide">
+          <div class="contents">
+            <h3>달성율에 따라 다양한 경품이...</h3>
+            <h2>투어달성 인증 이벤트!</h2>
+            <p><span>대구시 추천 음식점</span><span>20% 할인쿠폰</span></p>
+          </div>
+        </li>
+        <li class="banner-slide">
+          <div class="contents">
+            <h3>감동의 순간을 공유...</h3>
+            <h2>베스트 샷 콘테스트</h2>
+            <p><span>대구시 상품권</span><span>50만원 지급</span></p>
+          </div>
+        </li>
+        <li class="banner-slide">
+          <div class="contents">
+            <h3>선착순 1,000명에게 쏩니다.</h3>
+            <h2>호텔 할인 이벤트</h2>
+            <p><span>1일 숙박권</span><span>10% 할인쿠폰</span></p>
+          </div>
+        </li>
+      </ul>
+
+      <a href="#" id="prev" class="controls"><i class="fas fa-chevron-left"></i></a>
+      <a href="#" id="next" class="controls"><i class="fas fa-chevron-right"></i></a>
+    </section>
+
+    <div class="slide-wrap">
+      <h2>베스트 포토존</h2>
+      <div class="swiper mySwiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <% for (let i=0; i < course.length; i++) {%>
+            <div class="swiper-slide slide<%= [i] %>">
+              <div class="contents">
+                <h2>
+                  <%= course[i].name %>
+                </h2>
+                <p>
+                  <%= course[i].address %>
+                </p>
+              </div>
+            </div>
+            <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="best-shot">
+      <h2>베스트 샷!</h2>
+      <ul id='shot-container'></ul>
+      <div id="lightbox-overlay">
+        <div class="overlay-inner">
+          <button type="button" id="close-overlay">닫기</button>
+          <img src="" alt="Lightbox image" title="best-photo" id="lightbox-image" />
+          <div class="box-content">
+            <h3>
+              <span>♥ </span>
+              <span> 256</span>
+            </h3>
+            <p>수성못에서... 2022년 6월 3일</p>
+            <h2 class='s-title'>6개월만 가족나들이</h2>
+            <h3 class='scription'>하늘이 화창한 날 오후 가족과 함께 간만의 나들이...</h3>
+          </div>
+          <div class='guide'><p>※ 하트를 눌러 투표에 참가해 주세요. 추첨을 통해 다양한 상품을 드립니다.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="achieve">
+      <div id="achieve-title">
+        <h2>투어 달성</h2>
+        <div id="progress">
+          <progress value="0" max="100"></progress>
+          <div id="progressNum">
+            <h5></h5>
+          </div>
+          <div id="flagimg">
+            <i class="fa-solid fa-flag"></i>
+          </div>
+        </div>
+      </div>
+      <div class="list-wrap">
+        <% for (let i=0; i < course.length; i++) {%>
+          <div class="list" data-name="<%= course[i].name %>" data-code="<%= course[i].code %>"
+            data-latitude="<%= course[i].latitude %>" data-longitude="<%= course[i].longitude %>"
+            data-visited="<%= course[i].visited %>">
+            <div class="<%= course[i].bg %>"></div>
+            <div class="context">
+              <h2 class="place-name">
+                <%= course[i].name %>
+              </h2>
+              <h3 class="addr">
+                <%= course[i].address %>
+              </h3>
+            </div>
+            <% if (course[i].visited==="Y" ) { %>
+              <div class="stamp test"><i class="fa-regular fa-flag"></i></div>
+              <% } else { %>
+                <div class="stamp"><i class="fa-regular fa-flag"></i></div>
+                <% } %>
+          </div>
+          <% } %>
+      </div>
+    </div>
+
+    <div class="space"></div>
+    <%-include('../components/footer.ejs') %>

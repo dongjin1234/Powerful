@@ -1,0 +1,165 @@
+<%-include('../components/header.ejs') %>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=14b5663f262c196836978253035f9319"></script>
+  <script src="/client/js/course.js" defer></script>
+  <script src="/client/js/sub.js" defer></script>
+
+  </head>
+
+  <body>
+    <%-include('../components/side-menu.ejs') %>
+
+
+    <div class="album-title">
+        <h1>Powerful Photo Tour</h1>
+        <div class="toggle albumToggle"><i class="fa-solid fa-bars"></i></div>
+    </div>
+
+    <div class="loading-wrap">
+      <div class="spinner">
+        <div class="curve_top_left"></div>
+        <div class="curve_top_right"></div>
+        <div class="curve_bottom_left"></div>
+        <div class="curve_bottom_right"></div>
+        <div class="center_circle"></div>
+      </div>
+    </div>
+
+    <div class="navMenu">
+      <ul>
+        <li class='currentPosition courseBtn' data-class="current">
+          <div><i class="fa-solid fa-location-crosshairs"></i></div>
+          <div>현재위치</div>
+        </li>
+        <li class='photoZone courseBtn' data-class="photo">
+          <div><i class="fa-solid fa-camera"></i></div>
+          <div>포토존</div>
+        </li>
+        <li class='tourSpot courseBtn' data-class="tour">
+          <div><i class="fa-solid fa-route"></i></div>
+          <div>관광지</div>
+        </li>
+        <li class='foodSpot courseBtn' data-class="food">
+          <div><i class="fa-solid fa-utensils"></i></div>
+          <div>대구맛집</div>
+        </li>
+        <li class='festivalSpot courseBtn' data-class="festival">
+          <div><i class="fa-solid fa-map-location-dot"></i></div>
+          <div>축제</div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+
+    
+    <section class="place-list">
+      <div class='upperBar'></div>
+      <ul>
+        <% for (let i=0; i < course.length; i++) {%>
+          <li class="photo hidden" data-name="<%= course[i].name %>" data-visited="<%= course[i].visited %>"
+            data-address="<%= course[i].address %>" data-category="<%= course[i].category %>"
+            data-lat="<%= course[i].latitude %>" data-lon="<%= course[i].longitude %>">
+            <h2>
+              <%= course[i].name %><span>
+                  <%= course[i].mode %>
+                </span>
+            </h2>
+            <h3>
+              <%= course[i].address %>
+            </h3>
+            <div class='tag'>
+              <% for(let j=0 ; j < course[i].character.length; j++) {%>
+                <span>
+                  <%= course[i].character[j] %>
+                </span>
+                <% } %>
+            </div>
+            <h3><span class="meter">6.9km </span> 블로그리뷰 <span> 5,983 </span></h3>
+            <div class="icon">
+              <span><i class="fa-regular fa-star"></i></span><span><i
+                  class="fa-solid fa-arrow-up-from-bracket"></i></span>
+            </div>
+          </li>
+          <% } %>
+
+        <% for (let i=0; i < tour.length; i++) {%>
+          <li class="tour hidden"  data-name="<%= tour[i].name %>" data-address="<%= tour[i].address %>"
+            data-category="<%= tour[i].category %>" data-lat="<%= tour[i].latitude %>"
+            data-lon="<%= tour[i].longitude %>">
+            <h2>
+              <%= tour[i].name %>
+            </h2>
+            <h3>
+              <%= tour[i].address %>
+            </h3>
+            <div class='tag'>
+              <% for(let j=0 ; j < tour[i].character.length; j++) {%>
+                <span>
+                  <%= tour[i].character[j] %>
+                </span>
+                <% } %>
+            </div>
+            <h3><span class="meter">6.9km</span>블로그리뷰<span>5,983</span></h3>
+            <div class="icon">
+              <span><i class="fa-regular fa-star"></i></span><span><i
+                  class="fa-solid fa-arrow-up-from-bracket"></i></span>
+            </div>
+          </li>
+          <% } %>
+
+        <% for (let i=0; i < food.length; i++) {%>
+          <li class="food hidden" data-name="<%= food[i].name %>" data-address="<%= food[i].address %>"
+            data-category="<%= food[i].category %>" data-lat="<%= food[i].latitude %>"
+            data-lon="<%= food[i].longitude %>">
+            <h2>
+              <%= food[i].name %>
+            </h2>
+            <h3>
+              <%= food[i].address %>
+            </h3>
+            <div class='tag'>
+              <% for(let j=0 ; j < food[i].character.length; j++) {%>
+                <span>
+                  <%= food[i].character[j] %>
+                </span>
+                <% } %>
+            </div>
+            <h3><span class="meter">6.9km</span>블로그리뷰<span>5,983</span></h3>
+            <div class="icon">
+              <span><i class="fa-regular fa-star"></i></span><span><i
+                  class="fa-solid fa-arrow-up-from-bracket"></i></span>
+            </div>
+          </li>
+          <% } %>
+
+        <% for (let i=0; i < festival.length; i++) {%>
+          <li class="festival hidden" data-name="<%= festival[i].name %>" data-address="<%= festival[i].address %>"
+            data-category="<%= festival[i].category %>" data-lat="<%= festival[i].latitude %>"
+            data-lon="<%= festival[i].longitude %>">
+            <h2>
+              <%= festival[i].name %>
+            </h2>
+            <h3>
+              <%= festival[i].address %>
+            </h3>
+            <div class='tag'>
+              <% for(let j=0 ; j < festival[i].character.length; j++) {%>
+                <span>
+                  <%= festival[i].character[j] %>
+                </span>
+                <% } %>
+            </div>
+            <h3><span class="meter">6.9km</span>블로그리뷰<span>5,983</span></h3>
+            <div class="icon">
+              <span><i class="fa-regular fa-star"></i></span><span><i
+                  class="fa-solid fa-arrow-up-from-bracket"></i></span>
+            </div>
+          </li>
+          <% } %>
+      </ul>
+    </section>
+
+    <%-include('../components/footer.ejs') %>

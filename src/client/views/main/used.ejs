@@ -1,0 +1,180 @@
+<%-include('../components/header.ejs') %>
+    <script src="/client/js/album.js" defer></script>
+    <script src="/client/js/sub.js" defer></script>
+
+    </head>
+
+    <body>
+        <%-include('../components/side-menu.ejs') %>
+
+            <div class="loading-wrap">
+                <div class="spinner">
+                <div class="curve_top_left"></div>
+                <div class="curve_top_right"></div>
+                <div class="curve_bottom_left"></div>
+                <div class="curve_bottom_right"></div>
+                <div class="center_circle"></div>
+                </div>
+            </div>
+
+            <div class="album-title">
+                <h1>Powerful Photo Tour</h1>
+                <div class="toggle albumToggle"><i class="fa-solid fa-bars"></i></div>
+            </div>
+
+            <div class="gallery">
+                <div class="gallery-container">
+                    <div class="toolbar">
+                        <div class="search-wrapper">
+                            <input type="search" placeholder="Search for photos">
+                            <div class="counter">
+                                Total photos: <span>10</span></div>
+                        </div>
+
+                        <ul class="view-options">
+                            <li class="zoom">
+                                <input id='rangeBar' type="range" min="100" max="250" value="100">
+                            </li>
+                            <li class="show-grid active">
+                                <button>
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/grid-view.svg"
+                                        alt="grid view">
+                                </button>
+                            </li>
+                            <li class="show-list">
+                                <button>
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/list-view.svg"
+                                        alt="list view">
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <ol class="image-list grid-view">
+                        <li>
+                            <figure>
+                                <img src="/file/images/album1.jpg" alt="">
+                                <figcaption>
+                                    <p>앞산 소프라노 전망대</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album2.jpg" alt="">
+                                <figcaption>
+                                    <p>팔공산 수태골</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album3.jpg" alt="">
+                                <figcaption>
+                                    <p>금호강 사문진교</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album4.jpg" alt="">
+                                <figcaption>
+                                    <p>금호강에서</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album5.jpg" alt="">
+                                <figcaption>
+                                    <p>금호강 화랑교</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album6.jpg" alt="">
+                                <figcaption>
+                                    <p>앞산에서</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album7.jpg" alt="">
+                                <figcaption>
+                                    <p>집에서</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album8.jpg" alt="">
+                                <figcaption>
+                                    <p>형제봉에서</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album9.jpg" alt="">
+                                <figcaption>
+                                    <p>갓바위에서</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="/file/images/album10.jpg" alt="">
+                                <figcaption>
+                                    <p>수변공원에서</p>
+                                    <p>2020년 7월 15일</p>
+                                    <p><a href="#" target="_blank" class="sns"><i class="fa-solid fa-arrow-up-from-bracket"></i><i
+                                                class="fa-brands fa-facebook"></i><i
+                                                class="fa-brands fa-square-twitter"></i></a></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                    </ol>
+
+                </div>
+            </div>
+
+            <%-include('../components/footer.ejs') %>
