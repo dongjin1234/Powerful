@@ -6,11 +6,11 @@ let users = [
     id: "test",
     pw: "$2b$08$xMyGa3P7wVl6/mHqfXG0VuwMibd0g0hihVtZEndIeOl1qXj44CHlO", // 123456
   },
-    { 
+  { 
     no: 2,
-    name: "user",
+    name: "user1",
     id: "user1",
-    pw: 1234,
+    pw: "$2b$08$MSGvNEPWJvyWTfemBZo4Ie4qtpT91oR0My5CmtB4HO6IAVhRVknBq", //1234
   },
 ];
 export class MemoryUsersRepository {
