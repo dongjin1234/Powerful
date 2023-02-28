@@ -6,6 +6,12 @@ let users = [
     id: "test",
     pw: "$2b$08$xMyGa3P7wVl6/mHqfXG0VuwMibd0g0hihVtZEndIeOl1qXj44CHlO", // 123456
   },
+    { 
+    no: 2,
+    name: "user",
+    id: "user1",
+    pw: 1234,
+  },
 ];
 export class MemoryUsersRepository {
   async findById(id) {
