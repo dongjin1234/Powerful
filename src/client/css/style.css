@@ -755,6 +755,8 @@
   height: 80px;
   z-index: 3;
   background-color: #e84752;
+  max-width: 425px;
+  margin: 0 auto;
 }
 .footer-container .footer-wrap {
   display: flex;
