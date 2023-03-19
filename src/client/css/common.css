@@ -13,6 +13,7 @@
 .loading-wrap {
   position: absolute;
   width: 100%;
+  max-width: 425px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 30;
