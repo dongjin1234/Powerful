@@ -265,9 +265,12 @@
   pointer-events: none;
   position: fixed;
   width: 100%;
+  max-width: 425px;
+  margin: 0 auto;
   height: 100%;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: rgba(29, 31, 33, 0.95);
   transition: opacity 0.3s ease-in;
 }
@@ -279,23 +282,27 @@
 }
 
 .overlay-inner {
-  width: 80%;
-  height: max-content;
+  width: 100%;
+  max-width: 425px;
+  height: 100vh;
   position: absolute;
   left: 50%;
   top: 10%;
   transform: translateX(-50%);
 }
 .overlay-inner img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 40vh;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #close-overlay {
   position: absolute;
   z-index: 3;
   bottom: 100%;
-  right: 0;
+  right: 20px;
   padding: 0.5rem;
   font-size: 1.5rem;
   font-weight: 400;
@@ -314,6 +321,8 @@
   padding-top: 1rem;
   color: white;
   font-size: 2rem;
+  padding: 1rem 2rem;
+  
 }
 .box-content h3 {
   font-size: 1.7rem;
@@ -324,6 +333,7 @@
   font-size: 1rem;
 }
 .box-content h2.s-title {
+  text-align: center;
   font-size: 2rem;
   padding: 1rem;
 }
@@ -334,8 +344,6 @@
 
 .guide {
   color: white;
-  position: absolute;
-  top: 100%;
 }
 
 /* 투어달성 */
@@ -653,7 +661,7 @@
 
 .place-list {
   position: absolute;
-  top: 100%;
+  top: 137%;
   width: 100%;
   margin: 0 auto;
   box-shadow: 0px 1px 10px 1px rgba(138, 137, 137, 0.8);
@@ -664,7 +672,7 @@
 }
 .place-list.display {
   width: 100%;
-  top:577px;
+  top:100%;
 }
 
 .upperBar {
@@ -750,13 +758,12 @@
 .footer-container {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   height: 80px;
+  width: 425px;
   z-index: 3;
   background-color: #e84752;
-  max-width: 425px;
-  margin: 0 auto;
 }
 .footer-container .footer-wrap {
   display: flex;

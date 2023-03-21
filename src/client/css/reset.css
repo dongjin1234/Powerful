@@ -27,10 +27,17 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html {
+	max-width: 425px;
+	margin: 0 auto;
+}
 body {
+
 	line-height: 130%;
 	width: 100%;
+	margin: 0 auto;
 	overflow-x: hidden;
+	position: relative;
 }
 ol, ul {
 	list-style: none;
