@@ -31,8 +31,6 @@ body {
 	line-height: 130%;
 	width: 100%;
 	overflow-x: hidden;
-	max-width: 425px;
-	margin: 0 auto;
 }
 ol, ul {
 	list-style: none;
