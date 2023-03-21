@@ -9,10 +9,13 @@ closeBtn.addEventListener("click", moveRight);
 
 function moveLeft() {
   sideMenu.style.transform = "translateX(-100%)";
+  sideMenu.style.opacity = "1";
 }
 
 function moveRight() {
   sideMenu.style.transform = "translateX(0)";
+  sideMenu.style.opacity = "0";
+
 }
 
 const mypageBtn = document.querySelector(".logout");
